@@ -1,0 +1,10 @@
+<div>
+  <ng-container *ngFor="let key of objectKeys(sessionData);">
+    <label>Session {{key}}</label>
+     <ul *ngFor="let elem of objectKeys(sessionData[key]);">
+          <li *ngIf="elem != 'players'"> {{elem}} ==> {{sessionData[key][elem]}} </li>
+          <li *ngIf="elem == 'players'"><label>{{elem}} ==> </label>
+            <ng-container *ngFor="let player of parsedData">{{parsedData}}</ng-container></li>
+      </ul>
+  </ng-container>
+</div>

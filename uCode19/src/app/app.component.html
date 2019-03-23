@@ -1,11 +1,15 @@
-<div style="margin: auto;">
+<div>
+  <div style="text-align: center;">
+    <img class="logo" src="https://pbs.twimg.com/media/Dz14iytWoAADZUH.png" alt="uCode Logo"/>
+  </div>
+
+  <div>
   <ul>
-    <li *ngFor="let session of sessions">
-      <pre>{{ session | json}}</pre>
-    </li>
     <li *ngFor="let player of players">
       <pre>{{ player | json }}</pre>
+      <pre>hola {{ player[0] | json }}</pre>
     </li>
   </ul>
+</div>
 </div>
 <router-outlet></router-outlet>
