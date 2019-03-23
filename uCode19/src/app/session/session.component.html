@@ -3,8 +3,13 @@
     <label>Session {{key}}</label>
      <ul *ngFor="let elem of objectKeys(sessionData[key]);">
           <li *ngIf="elem != 'players'"> {{elem}} ==> {{sessionData[key][elem]}} </li>
-          <li *ngIf="elem == 'players'"><label>{{elem}} ==> </label>
-            <ng-container *ngFor="let player of parsedData">{{parsedData}}</ng-container></li>
-      </ul>
+          <li *ngIf="elem == 'players'">{{elem}} ==> 
+            <ng-container *ngFor="let key of objectKeys(sessionData[key][elem]);">
+              {{ key }} ==> 
+              <ng-container *ngFor="let data of objectKeys(sessionData[key][elem][key]);">
+                  <li>{{data}} ==> {{ sessionData[key][elem][key][data] }}</li>
+              </ng-container>
+            </ng-container></li>
+      </ul><li>
   </ng-container>
 </div>

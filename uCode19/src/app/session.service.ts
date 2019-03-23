@@ -11,6 +11,6 @@ export class SessionService {
   db: AngularFireDatabase;
   constructor(_db: AngularFireDatabase) {this.db=_db; }
   getHeroes():  Promise<DataSnapshot> {
-    return this.db.list('sessions').query.once('value')
+    return this.db.list('sessions').query.once('value');
   }
 }
