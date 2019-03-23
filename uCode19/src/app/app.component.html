@@ -1,0 +1,11 @@
+<div style="margin: auto;">
+  <ul>
+    <li *ngFor="let session of sessions">
+      <pre>{{ session | json}}</pre>
+    </li>
+    <li *ngFor="let player of players">
+      <pre>{{ player | json }}</pre>
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>
