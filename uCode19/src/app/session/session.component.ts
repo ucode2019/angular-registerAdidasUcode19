@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SessionService} from '../session.service';
+import * as M from 'materialize-css';
 
  @Component({
   selector: 'app-session',
@@ -10,11 +11,13 @@ export class SessionComponent implements OnInit {
   public sessions = [];
   public sessionData = [];
   public playersData = [];
+  public showHide: false;
   objectKeys = Object.keys;
   objectValues = Object.values;
   constructor(private sessionService: SessionService){
   }
   ngOnInit() {
+    M.AutoInit();
     this.sessionService.getHeroes().then(value => {
       this.sessions.push(value.val());
       this.setValuesSession(this.sessions[0]);
@@ -40,4 +43,8 @@ export class SessionComponent implements OnInit {
       }
     }
   }
+  displayIt(){
+    this.show = !this.show;
+  }
+
 }

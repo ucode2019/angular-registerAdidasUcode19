@@ -10,7 +10,6 @@ import { SessionComponent } from './session/session.component';
 import { PlayerComponent } from './player/player.component';
 import { SessionService } from './session.service';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +19,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'ucode2019'),
     AngularFireDatabaseModule
   ],
