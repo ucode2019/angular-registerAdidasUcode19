@@ -5,11 +5,11 @@
           <li *ngIf="elem != 'players'"> {{elem}} ==> {{sessionData[key][elem]}} </li>
           <li *ngIf="elem == 'players'">{{elem}} ==> 
             <ng-container *ngFor="let key of objectKeys(sessionData[key][elem]);">
-              {{ key }} ==> 
+              Player {{ key }} ==> 
               <ng-container *ngFor="let data of objectKeys(sessionData[key][elem][key]);">
-                  <li>{{data}} ==> {{ sessionData[key][elem][key][data] }}</li>
+                  <li class="list-group-item">{{data}} ==> {{ sessionData[key][elem][key][data] }}</li>
               </ng-container>
             </ng-container></li>
-      </ul><li>
+      </ul>
   </ng-container>
 </div>

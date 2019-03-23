@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +9,8 @@ import {environment} from '../environments/environment';
 import { SessionComponent } from './session/session.component';
 import { PlayerComponent } from './player/player.component';
 import { SessionService } from './session.service';
-
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +20,11 @@ import { SessionService } from './session.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'ucode2019'),
     AngularFireDatabaseModule
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [SessionService],
   bootstrap: [AppComponent, SessionComponent, PlayerComponent]
 })
