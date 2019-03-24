@@ -1,14 +1,16 @@
 <div style="text-align:center;">
   <ng-container *ngFor="let k of objectKeys(sessionData);">
     <h3 class="collection with-header">Session {{k}}</h3>
-     <ul *ngFor="let elem of objectKeys(sessionData[k]);">
+     <ul class=" collection-item " *ngFor="let elem of objectKeys(sessionData[k]);">
           <li *ngIf="elem != 'players'" class="collection-item"> {{elem}}: {{sessionData[k][elem]}} </li>
           <li *ngIf="elem == 'players'" class="collection-item">{{elem}}: 
-            <ng-container *ngFor="let key of objectKeys(sessionData[k][elem]);">
-              <br/><button class="collection-header" onclick="displayIt()">Player {{ key }} </button><br/>
-              <ng-container class="collection-item" *ngFor="let data of objectKeys(sessionData[k][elem][key]);">
-                  <li name="players" style="display:none;" class="collection-item">{{data}}: {{ sessionData[k][elem][key][data] }}</li>
-              </ng-container>
+            <ng-container style="width:50%" *ngFor="let key of objectKeys(sessionData[k][elem]); let i = index">
+              <br/><button name="jugar" class="waves-effect waves-light btn" (click)="ShowHideButton(i)"> Player {{ key }} </button> 
+              <div id="{{key}}" style="display:none;">
+                <ng-container *ngFor="let data of objectKeys(sessionData[k][elem][key]);">
+                    <li class="collection-item">{{data}}: {{ sessionData[k][elem][key][data] }}</li>
+                </ng-container>
+              </div>
             </ng-container>
           </li>
       </ul>

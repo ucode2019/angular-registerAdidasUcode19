@@ -15,18 +15,21 @@
   <app-root></app-root>
   <app-session></app-session>
   <app-player></app-player>
-  <script>
-    function displayIt(){
-      elem = document.getElementsByName('players');
-      for (var i=0; i<= elem.length; i++){
-        if(elem[i].style.display=="none"){
-          elem[i].style.display="block";
-        } else {
-          elem[i].style.display="none";
-        }
+  <!--<script>
+    function displayIt(key){
+      elems = document.getElementsByName("jugar").length - 7;
+      for (var i=0; i< elems; i++){
+        var elem = document.getElementById(i);
+       // if()
       }
-    }
-  </script>
+      alert(ekey);
+      /*    if(elem[key].style.display=="none"){
+            elem[key].style.display="block";
+          } else {
+            elem[key].style.display="none";
+          }*/
+      }
+  </script>-->
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

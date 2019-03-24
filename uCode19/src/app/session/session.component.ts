@@ -11,7 +11,7 @@ export class SessionComponent implements OnInit {
   public sessions = [];
   public sessionData = [];
   public playersData = [];
-  public showHide: false;
+  showMainContent: Boolean = true;
   objectKeys = Object.keys;
   objectValues = Object.values;
   constructor(private sessionService: SessionService){
@@ -23,8 +23,7 @@ export class SessionComponent implements OnInit {
       this.setValuesSession(this.sessions[0]);
       //parse players
       this.getPlayers(this.sessionData);
-    });
-    
+    });    
   }
 
   setValuesSession(data) {
@@ -43,8 +42,19 @@ export class SessionComponent implements OnInit {
       }
     }
   }
-  displayIt(){
-    this.show = !this.show;
+  ShowHideButton(index) {
+    console.log(index);
+    var players = document.getElementsByName("jugar").length - 7;
+    var id = document.getElementById(index);
+    for(var i = 0; i< players; i++){
+      if(i==index){
+        
+        if(id.style.display == "none")
+          id.style.display="block";
+        else
+          id.style.display="none";
+      }
+    }
+    this.showMainContent = this.showMainContent ? false : true;
   }
-
 }
