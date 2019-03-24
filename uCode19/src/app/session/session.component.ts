@@ -11,7 +11,7 @@ export class SessionComponent implements OnInit {
   public sessions = [];
   public sessionData = [];
   public playersData = [];
-  showMainContent: Boolean = true;
+  showMainContent: Boolean = false;
   objectKeys = Object.keys;
   objectValues = Object.values;
   constructor(private sessionService: SessionService){
